@@ -6,29 +6,30 @@
   <title>jung seah — work</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="preload" href="assets/fonts/Rivet-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/style.css?v=4" />
 </head>
 <body class="work-page">
-  <header class="top">
-    <a href="index.html" id="home">jung seah</a>
-    <nav><a href="#" id="prev">prev</a><a href="#" id="next">next</a><a href="index.html" id="toindex">index</a></nav>
-  </header>
+  <!-- 왼쪽 고정 정보 카드 -->
+  <aside class="card" id="card">
+    <h1 class="card-title" id="title"></h1>
+    <p class="card-ko" id="title-ko"></p>
+    <dl class="rows" id="meta"></dl>
+    <p class="card-summary" id="summary"></p>
+    <nav class="card-btns">
+      <a href="index.html" id="toindex">Index</a>
+      <a href="#" id="prev">← Prev</a>
+      <a href="#" id="next">Next →</a>
+    </nav>
+  </aside>
 
-  <section class="work-head" id="head">
-    <h1 class="work-title"><span id="title"></span><span class="work-title-ko" id="title-ko"></span></h1>
-    <dl class="meta" id="meta"></dl>
-    <p class="summary" id="summary"></p>
-  </section>
+  <!-- 작업물 -->
+  <main class="stage" id="blocks"></main>
 
-  <section class="blocks" id="blocks"></section>
-
-  <footer class="next" id="footer"></footer>
-
-  <script src="js/data.js?v=3"></script>
-  <script src="js/type-tester.js?v=3"></script>
-  <script src="js/work.js?v=3"></script>
+  <script src="js/data.js?v=4"></script>
+  <script src="js/type-tester.js?v=4"></script>
+  <script src="js/work.js?v=4"></script>
 </body>
 </html>

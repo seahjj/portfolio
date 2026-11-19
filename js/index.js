@@ -134,8 +134,9 @@
 
     const r = el.getBoundingClientRect();
     const fs = parseFloat(getComputedStyle(el).fontSize);
-    const pad = cssPx('var(--pad)');
-    const titleFs = cssPx('var(--title)');
+    // work 페이지 정보 카드 안 제목 위치 (style.css의 --gap 14px + --card-pad 20px)
+    const inset = innerWidth <= 760 ? 10 + 20 : 14 + 20;
+    const titleFs = cssPx('clamp(40px, 3.9vw, 72px)');
 
     const fly = document.createElement('div');
     fly.className = 'flyer';
@@ -149,8 +150,8 @@
 
     // 목표: work 페이지 제목 위치 (line-height 1)
     const s = titleFs / fs;
-    const tx = pad - r.left;
-    const ty = pad * 3.2 - top0;
+    const tx = inset - r.left;
+    const ty = inset - top0;
     requestAnimationFrame(() => {
       fly.style.transform = `translate(${tx}px, ${ty}px) scale(${s})`;
     });
