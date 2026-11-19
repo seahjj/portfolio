@@ -235,6 +235,6 @@ window.PROJECTS = [
     tools: 'Visual Studio',
     thumb: 'assets/img/web-bakadashi.jpg',
     summary: '작업을 제목·카테고리·분야·툴·기간으로 정리한 아카이브 웹사이트.',
-    blocks: [{ type: 'image', src: 'assets/img/web-bakadashi.jpg', size: 'medium' }],
+    blocks: [{ type: 'video', src: 'assets/video/bakadashi.mp4', poster: 'assets/img/web-bakadashi.jpg', narrow: true }],
   },
 ];
