@@ -15,7 +15,9 @@
   $('#summary').textContent = p.summary || '';
   $('#summary-ko').textContent = p.summaryKo || '';
   const meta = [['year', p.year], ['category', p.category], ['role', p.role], ['tools', p.tools]].filter(([, v]) => v);
-  $('#meta').innerHTML = meta.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('');
+  // 쉼표·가운뎃점으로 나눠 칩으로 보여줌
+  const chips = v => String(v).split(/\s*[,·]\s*/).filter(Boolean).map(t => `<span class="chip">${esc(t)}</span>`).join('');
+  $('#meta').innerHTML = meta.map(([k, v]) => `<dt>${k}</dt><dd>${chips(v)}</dd>`).join('');
 
   let no = 0;
   const cap = c => (c ? `<figcaption>${esc(c)}</figcaption>` : '');
