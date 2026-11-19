@@ -38,7 +38,6 @@ window.NAV = {
         },
         { label: 'poster', id: 'poster' },
         { label: 'editorial', id: 'editorial' },
-        { label: 'typographic', id: 'typographic' },
         { label: 'funding', id: 'funding' },
       ],
     },
@@ -236,20 +235,6 @@ window.PROJECTS = [
         ],
       },
     ],
-  },
-
-  /* ---------------- typographic ---------------- */
-  {
-    id: 'typographic',
-    title: 'typographic',
-    titleKo: '',
-    category: 'Typography',
-    year: '',
-    role: '',
-    tools: '',
-    thumb: '',
-    summary: '이 자리에 들어갈 작업을 추가해 주세요.',
-    blocks: [],
   },
 
   /* ---------------- funding ---------------- */
