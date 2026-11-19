@@ -98,7 +98,8 @@ body.lifting .preview { opacity: 0; }
 .meta dd { margin-bottom: .7em; padding-right: 1.5em; }
 .intro-text { max-width: 40em; }
 .title-ko { font-family: var(--serif); font-size: var(--nav-size); line-height: 1.22; }
-.title-ko:empty { display: none; }
+.title-ko:empty, .summary:empty { display: none; }
+.summary-ko { margin-top: .6em; color: #555; }
 .summary { margin-top: 1.1em; font-size: 15px; line-height: 1.8; word-break: keep-all; }
 
 .blocks { margin-top: 12vh; display: flex; flex-direction: column; gap: 12vh; }

@@ -219,6 +219,8 @@ window.PROJECTS = [
     thumb: 'assets/img/editorial-1.jpg',
     summary:
       'Rivet is a modern, geometric font that exudes a solid, industrial feel reminiscent of the Industrial Revolution. Its low x-height and grotesque design make it a unique choice for impactful and timeless.',
+    summaryKo:
+      '리벳은 산업혁명을 떠올리게 하는 단단하고 공업적인 느낌의 모던한 기하학 서체입니다. 낮은 엑스하이트와 그로테스크한 형태 덕분에, 강렬하면서도 시대를 타지 않는 인상을 남깁니다.',
     blocks: [
       { type: 'text', eyebrow: 'Type Tester', title: '글자를 눌러 직접 입력해 보세요',
         body: '낮은 x-height와 그로테스크한 형태의 라틴 서체입니다. 오른쪽 슬라이더로 크기를 바꿀 수 있어요.' },

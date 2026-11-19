@@ -13,6 +13,7 @@
   document.title = `${p.title} — jung seah`;
   $('#title-ko').textContent = p.titleKo || '';
   $('#summary').textContent = p.summary || '';
+  $('#summary-ko').textContent = p.summaryKo || '';
   const meta = [['year', p.year], ['category', p.category], ['role', p.role], ['tools', p.tools]].filter(([, v]) => v);
   $('#meta').innerHTML = meta.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('');
 
