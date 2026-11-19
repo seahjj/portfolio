@@ -23,11 +23,37 @@
       ${b.eyebrow || b.heading ? `<p class="eyebrow">${esc(b.eyebrow || b.heading)}</p>` : ''}
       ${b.title ? `<h2>${esc(b.title)}</h2>` : ''}
       ${b.body ? `<p class="body">${esc(b.body)}</p>` : ''}</div></section>`,
-    cards: b => `<section class="b-cards">${b.items.map(c => `<div class="card">
+    cards: b => `<section class="b-cards"${b.items.length === 4 ? ' style="grid-template-columns:repeat(2,1fr)"' : ''}>${b.items.map(c => `<div class="card">
       ${c.label ? `<span class="pill">${esc(c.label)}</span>` : ''}<strong>${esc(c.title)}</strong>${c.body ? `<p>${esc(c.body)}</p>` : ''}</div>`).join('')}</section>`,
-    image: b => `<figure class="b-media ${b.size || ''}"><img src="${b.src}" alt="${esc(b.caption || p.title)}" loading="lazy" />${cap(b.caption)}</figure>`,
-    grid: b => `<div class="b-grid" style="--cols:${b.cols || 2}">${b.items.map(i =>
-      `<figure class="b-media"><img src="${i.src}" alt="${esc(i.caption || '')}" loading="lazy" />${cap(i.caption)}</figure>`).join('')}</div>`,
+    image: b => `<figure class="b-media ${b.size || ''} ${b.wide ? 'wide' : ''}"><img src="${b.src}" alt="${esc(b.caption || p.title)}" loading="lazy" />${cap(b.caption)}</figure>`,
+    grid: b => `<div class="b-grid ${b.crop ? 'crop' : ''}" style="--cols:${b.cols || 2}">${b.items.map(i =>
+      `<figure class="b-media ${i.contain ? 'contain' : ''}"><img src="${i.src}" alt="${esc(i.caption || '')}" loading="lazy" />${cap(i.caption)}</figure>`).join('')}</div>`,
+    stats: b => `<section class="b-stats"${b.items.length === 4 ? ' style="grid-template-columns:repeat(4,1fr)"' : ''}>${b.items.map(i => {
+      const n = typeof i.value === 'number' ? i.value : parseFloat(String(i.value).replace(/,/g, ''));
+      const bar = i.bar != null ? i.bar : (i.unit === '%' ? Math.min(100, n) : 0);
+      return `<div class="stat"><strong>${esc(i.value)}<small>${esc(i.unit || '')}</small></strong>
+        ${bar ? `<i class="bar"><b style="width:${bar}%"></b></i>` : '<i class="bar empty"></i>'}
+        <span>${esc(i.label)}</span>${i.source ? `<em>${esc(i.source)}</em>` : ''}</div>`;
+    }).join('')}</section>`,
+    map: b => `<section class="b-map"><div class="plane">
+      <span class="ax ax-l">${esc(b.x[0])}</span><span class="ax ax-r">${esc(b.x[1])}</span>
+      <span class="ax ax-b">${esc(b.y[0])}</span><span class="ax ax-t">${esc(b.y[1])}</span>
+      ${b.dots.map(d => `<span class="dot ${d.me ? 'me' : ''}" style="left:${d.x}%;bottom:${d.y}%"><i></i>${esc(d.label)}</span>`).join('')}
+      </div></section>`,
+    quote: b => `<section class="b-quote"><p>${esc(b.text)}</p>${b.sub ? `<span>${esc(b.sub)}</span>` : ''}</section>`,
+    mosaic: b => `<section class="b-mosaic">${b.items.map(i => `<img src="${i.src}" alt="" loading="lazy" style="grid-column:span ${i.span || 1}" class="${i.tall ? 'tall' : ''}" />`).join('')}</section>`,
+    logos: b => `<section class="b-logos">${b.items.map(i => `<figure><div class="logo-box"><img src="${i.src}" alt="${esc(i.label)}" /></div>
+      <figcaption><b>${esc(i.label)}</b>${i.note ? `<span>${esc(i.note)}</span>` : ''}</figcaption></figure>`).join('')}</section>`,
+    type: b => `<section class="b-type">${b.items.map(i => `<div class="row"><div class="who"><b>${esc(i.role)}</b><span>${esc(i.family)}</span></div>
+      <img src="${i.src}" alt="${esc(i.family)}" loading="lazy" /></div>`).join('')}</section>`,
+    colors: b => `<section class="b-colors">${b.items.map(i => {
+      const h = i.hex.replace('#', ''); const lum = (parseInt(h.slice(0, 2), 16) * .3 + parseInt(h.slice(2, 4), 16) * .59 + parseInt(h.slice(4, 6), 16) * .11);
+      return `<div class="chip ${lum < 140 ? 'dark' : ''}" style="background:${i.hex}"><b>${esc(i.name)}</b>
+        <span>${esc(i.hex.toUpperCase())}</span><span>CMYK ${esc(i.cmyk)}</span><span>RGB ${esc(i.rgb)}</span></div>`;
+    }).join('')}</section>`,
+    products: b => `<section class="b-products">${b.items.map(i => `<div class="product"><div class="pimg"><img src="${i.src}" alt="${esc(i.name)}" loading="lazy" /></div>
+      <span class="pill">${esc(i.name)}</span><p>${esc(i.body)}</p></div>`).join('')}</section>`,
+    note: b => `<p class="b-note">${esc(b.text)}</p>`,
     video: b => `<figure class="b-media"><video src="${b.src}" poster="${b.poster || ''}" autoplay muted loop playsinline controls></video>${cap(b.caption)}</figure>`,
     embed: b => `<figure class="b-embed"><iframe src="${b.src}" title="${esc(p.title)}" loading="lazy" allow="autoplay"></iframe>
       <figcaption><span>${esc(b.caption || '')}</span>${b.open ? `<a href="${b.src}" target="_blank" rel="noopener">open ↗</a>` : ''}</figcaption></figure>`,
