@@ -24,7 +24,7 @@
   const cap = c => (c ? `<figcaption>${esc(c)}</figcaption>` : '');
   const R = {
     text: b => `<section class="b-text"><span class="b-no">${String(++no).padStart(2, '0')}</span><div>
-      ${b.eyebrow || b.heading ? `<p class="eyebrow">${esc(b.eyebrow || b.heading)}</p>` : ''}
+      <p class="eyebrow"><span class="n">${String(no).padStart(2, '0')}</span><span>${esc(b.eyebrow || b.heading || '')}</span></p>
       ${b.title ? `<h2>${esc(b.title)}</h2>` : ''}
       ${b.body ? `<p class="body">${esc(b.body)}</p>` : ''}</div></section>`,
     cards: b => `<section class="b-cards"${b.items.length === 4 ? ' style="grid-template-columns:repeat(2,1fr)"' : ''}>${b.items.map(c => `<div class="card">
