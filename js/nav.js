@@ -1,3 +1,17 @@
+/* 프로젝트 테마 적용 (null 이면 기본 흰 바탕) */
+window.applyTheme = function (t) {
+  const r = document.documentElement.style;
+  const keys = ['--paper', '--ink', '--accent', '--card', '--line', '--mute', '--mute-2', '--body'];
+  if (!t) { keys.forEach(k => r.removeProperty(k)); return; }
+  const d = !!t.dark;
+  r.setProperty('--paper', t.paper); r.setProperty('--ink', t.ink);
+  r.setProperty('--accent', t.accent || t.ink); r.setProperty('--card', t.card);
+  r.setProperty('--line', d ? 'rgba(255,255,255,.12)' : 'rgba(0,0,0,.09)');
+  r.setProperty('--mute', d ? 'rgba(255,255,255,.28)' : 'rgba(0,0,0,.22)');
+  r.setProperty('--mute-2', d ? 'rgba(255,255,255,.5)' : 'rgba(0,0,0,.45)');
+  r.setProperty('--body', d ? 'rgba(255,255,255,.72)' : 'rgba(0,0,0,.68)');
+};
+
 /* 목차 (첫 페이지와 프로젝트 페이지가 같은 목차를 씀)
    window.initNav({ current: '프로젝트 id' | null, onIndex: true | false }) */
 (() => {
@@ -122,19 +136,21 @@
     }
     function showPreview(id) {
       const p = byId[id];
+      if (onIndex) window.applyTheme(p && p.theme);
       if (!preview || !p || !p.thumb || touch || id === current) return hidePreview();
       if (!previewImg.src.endsWith(p.thumb)) previewImg.src = p.thumb;
       preview.classList.add('show');
       if (!raf) { px = mx; loop(); }
     }
-    function hidePreview() { preview && preview.classList.remove('show'); }
+    function hidePreview() { preview && preview.classList.remove('show'); if (onIndex) window.applyTheme(null); }
     nav.addEventListener('mouseleave', hidePreview);
     window.PROJECTS.forEach(p => { if (p.thumb) { const i = new Image(); i.src = p.thumb; } });
 
     /* 이동: 첫 페이지에서는 목차가 위로 올라간 뒤 이동 */
     function go(id) {
       if (id === current) return;
-      hidePreview();
+      preview && preview.classList.remove('show');
+      window.applyTheme(byId[id] && byId[id].theme);
       if (onIndex && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
         sessionStorage.setItem('lifted', '1');
         document.body.classList.add('lifting');

@@ -14,6 +14,9 @@
    { type: 'type', items: [{ role, family, src }] } 서체 견본
    { type: 'colors', items: [{ name, hex, cmyk, rgb }] } 컬러칩
    { type: 'products', items: [{ src, name, body }] } 상품 카드
+
+   theme: { paper 바탕, ink 글자, accent 강조, card 카드, dark 어두운 테마 여부 }
+          프로젝트 페이지 전체 색과, 첫 페이지에서 마우스를 올렸을 때 바뀌는 바탕색
    { type: 'image', src, caption, size }            이미지 (size: 'full' | 'wide' | 'medium' | 'small')
    { type: 'grid',  cols, items: [{ src, caption }] } 이미지 그리드
    { type: 'video', src, poster, caption }          영상 (mp4)
@@ -61,6 +64,7 @@ window.PROJECTS = [
   /* ---------------- motion ---------------- */
   {
     id: 'motion',
+    theme: { paper: '#140f22', ink: '#f3f0ff', accent: '#3df58a', card: '#211a35', dark: true },
     title: 'motion',
     titleKo: '라스트씬 · 괴작용 화제',
     category: 'Motion Graphic',
@@ -79,6 +83,7 @@ window.PROJECTS = [
   /* ---------------- branding: Usual Focus ---------------- */
   {
     id: 'branding-usual-focus',
+    theme: { paper: '#ebe7df', ink: '#2a2120', accent: '#6f7560', card: '#dfd9cd' },
     title: 'usual focus',
     titleKo: '유주얼 포커스 아이케어',
     category: 'Branding',
@@ -173,6 +178,7 @@ window.PROJECTS = [
   /* ---------------- branding: SID ---------------- */
   {
     id: 'branding-sid',
+    theme: { paper: '#f5f3fb', ink: '#2b2840', accent: '#7a6ad8', card: '#e9e5f6' },
     title: 'sid exhibition',
     titleKo: '차곡차곡 담다 : 소중한 순간 하나하나를',
     category: 'Branding, Exhibition',
@@ -197,6 +203,7 @@ window.PROJECTS = [
   /* ---------------- poster ---------------- */
   {
     id: 'poster',
+    theme: { paper: '#f1f6ec', ink: '#1c2a1a', accent: '#1f7fd1', card: '#e2ebd8' },
     title: 'poster',
     titleKo: 'Peace is crafted from the pieces of little peas',
     category: 'Poster',
@@ -215,6 +222,7 @@ window.PROJECTS = [
   /* ---------------- editorial (Rivet) ---------------- */
   {
     id: 'editorial',
+    theme: { paper: '#141414', ink: '#f0f0f0', accent: '#f0f0f0', card: '#202020', dark: true },
     title: 'editorial',
     titleKo: 'Rivet — 서체 리플렛',
     category: 'Editorial, Type Design',
@@ -246,6 +254,7 @@ window.PROJECTS = [
   /* ---------------- funding ---------------- */
   {
     id: 'funding',
+    theme: { paper: '#f5eee2', ink: '#3d3532', accent: '#5b86c9', card: '#ebe0cd' },
     title: 'funding',
     titleKo: 'KKOMO Retto 꼬모레토 — 함께 꺼내본 추억',
     category: 'Funding, Product Design, Communication',
@@ -301,6 +310,7 @@ window.PROJECTS = [
   /* ---------------- ux/ui: Piko ---------------- */
   {
     id: 'uxui-piko',
+    theme: { paper: '#0f110f', ink: '#f5f5f5', accent: '#bbff46', card: '#1c1f1c', dark: true },
     title: 'piko',
     titleKo: 'Piko — 개인 맞춤 OTT 탐색 서비스',
     category: 'UX/UI Design, Branding',
@@ -408,6 +418,7 @@ window.PROJECTS = [
   /* ---------------- web: 악:카이브 ---------------- */
   {
     id: 'web-akchive',
+    theme: { paper: '#100d0b', ink: '#ebe3d6', accent: '#c8a96a', card: '#1d1915', dark: true },
     title: '악:카이브',
     titleKo: 'Ak:chive — 아카이브 북',
     category: 'Web Design, Interactive',
@@ -427,6 +438,7 @@ window.PROJECTS = [
   /* ---------------- web: bakadashi ---------------- */
   {
     id: 'web-bakadashi',
+    theme: { paper: '#ffffff', ink: '#111111', accent: '#e0311c', card: '#f4f4f2' },
     title: 'bakadashi',
     titleKo: '작업 아카이브 웹사이트',
     category: 'Web Design',

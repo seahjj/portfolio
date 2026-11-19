@@ -8,6 +8,7 @@
   // 첫 페이지에서 목차가 올라오며 넘어온 경우: 내용만 서서히 등장
   if (sessionStorage.getItem('lifted')) { document.body.classList.add('arrive'); sessionStorage.removeItem('lifted'); }
 
+  window.applyTheme(p.theme);
   initNav({ current: p.id, onIndex: false });
 
   document.title = `${p.title} — jung seah`;
