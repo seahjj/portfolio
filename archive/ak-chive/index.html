@@ -64,6 +64,11 @@
   <script src="jquery.js"></script>
   <script src="turn.js"></script>
   <script src="script.js"></script>
+  <!-- 포트폴리오로 돌아가기 (전체 화면으로 열었을 때만 보임) -->
+  <a id="pf-back" href="../../work.html?id=web-akchive" style="display:none;position:fixed;top:18px;left:18px;z-index:2147483647;
+     padding:8px 14px;border-radius:100px;background:rgba(255,255,255,.92);color:#111;font:14px/1 'EB Garamond',serif;
+     text-decoration:none;box-shadow:0 2px 12px rgba(0,0,0,.25)">← portfolio</a>
+  <script>if (window.top === window) document.getElementById('pf-back').style.display = 'block';</script>
 </body>
 
 </html>

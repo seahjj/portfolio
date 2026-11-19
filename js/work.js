@@ -59,7 +59,7 @@
     note: b => `<p class="b-note">${esc(b.text)}</p>`,
     video: b => `<figure class="b-media"><video src="${b.src}" poster="${b.poster || ''}" autoplay muted loop playsinline controls></video>${cap(b.caption)}</figure>`,
     embed: b => `<figure class="b-embed"><iframe src="${b.src}" title="${esc(p.title)}" loading="lazy" allow="autoplay"></iframe>
-      <figcaption><span>${esc(b.caption || '')}</span>${b.open ? `<a href="${b.src}" target="_blank" rel="noopener">open ↗</a>` : ''}</figcaption></figure>`,
+      <figcaption><span>${esc(b.caption || '')}</span>${b.open ? `<a href="${b.src}">전체 화면으로 보기 ↗</a>` : ''}</figcaption></figure>`,
     facts: b => `<section class="b-facts">${b.items.map(([k, v]) => `<div><strong>${esc(k)}</strong><span>${esc(v)}</span></div>`).join('')}</section>`,
     'type-tester': () => `<div class="tt-mount"></div>`,
   };
