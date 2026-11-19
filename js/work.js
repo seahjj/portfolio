@@ -16,9 +16,15 @@
   const meta = [['year', p.year], ['category', p.category], ['role', p.role], ['tools', p.tools]].filter(([, v]) => v);
   $('#meta').innerHTML = meta.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('');
 
+  let no = 0;
   const cap = c => (c ? `<figcaption>${esc(c)}</figcaption>` : '');
   const R = {
-    text: b => `<section class="b-text"><h3>${esc(b.heading || '')}</h3><p>${esc(b.body)}</p></section>`,
+    text: b => `<section class="b-text"><span class="b-no">${String(++no).padStart(2, '0')}</span><div>
+      ${b.eyebrow || b.heading ? `<p class="eyebrow">${esc(b.eyebrow || b.heading)}</p>` : ''}
+      ${b.title ? `<h2>${esc(b.title)}</h2>` : ''}
+      ${b.body ? `<p class="body">${esc(b.body)}</p>` : ''}</div></section>`,
+    cards: b => `<section class="b-cards">${b.items.map(c => `<div class="card">
+      ${c.label ? `<span class="pill">${esc(c.label)}</span>` : ''}<strong>${esc(c.title)}</strong>${c.body ? `<p>${esc(c.body)}</p>` : ''}</div>`).join('')}</section>`,
     image: b => `<figure class="b-media ${b.size || ''}"><img src="${b.src}" alt="${esc(b.caption || p.title)}" loading="lazy" />${cap(b.caption)}</figure>`,
     grid: b => `<div class="b-grid" style="--cols:${b.cols || 2}">${b.items.map(i =>
       `<figure class="b-media"><img src="${i.src}" alt="${esc(i.caption || '')}" loading="lazy" />${cap(i.caption)}</figure>`).join('')}</div>`,

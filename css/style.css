@@ -92,6 +92,7 @@ body.lifting .preview { opacity: 0; }
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
 .work-intro, .b-text { display: grid; grid-template-columns: var(--c1) 1fr; }
+.blocks > .b-cards { margin-left: var(--c1); }
 .meta { font-family: var(--serif); font-size: 15px; line-height: 1.35; }
 .meta dt { color: var(--mute-2); }
 .meta dd { margin-bottom: .7em; padding-right: 1.5em; }
@@ -103,8 +104,17 @@ body.lifting .preview { opacity: 0; }
 .blocks { margin-top: 12vh; display: flex; flex-direction: column; gap: 12vh; }
 .blocks > figure, .blocks > .b-grid, .blocks > .b-facts, .blocks > .tt { margin-left: var(--c1); }
 
-.b-text h3 { font-family: var(--serif); font-weight: 400; font-size: 15px; color: var(--mute-2); padding-right: 1.5em; }
-.b-text p { font-size: 15px; line-height: 1.8; max-width: 40em; word-break: keep-all; }
+.b-no { font-family: var(--serif); font-size: var(--nav-size); line-height: 1.22; color: var(--mute); }
+.eyebrow { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--mute-2); }
+.b-text h2 { margin-top: .35em; font-family: var(--sans); font-weight: 600; font-size: clamp(22px, 1.9vw, 34px); line-height: 1.35; letter-spacing: -.02em; word-break: keep-all; max-width: 22em; }
+.b-text .body { margin-top: 1em; font-size: 15px; line-height: 1.8; color: #444; max-width: 40em; word-break: keep-all; }
+
+/* 작은 카드 묶음 */
+.b-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-top: -8vh; }
+.b-cards .card { background: #f4f4f2; border-radius: 10px; padding: 20px 20px 22px; }
+.b-cards .pill { display: inline-block; padding: 3px 10px; border: 1px solid #d6d6d2; border-radius: 100px; font-family: var(--serif); font-size: 13px; color: var(--mute-2); background: #fff; }
+.b-cards strong { display: block; margin-top: 14px; font-weight: 600; font-size: 16px; line-height: 1.45; word-break: keep-all; }
+.b-cards p { margin-top: 8px; font-size: 13.5px; line-height: 1.7; color: #555; word-break: keep-all; }
 
 .b-media img, .b-media video { max-width: 100%; max-height: 88vh; width: auto; height: auto; }
 figcaption { margin-top: 10px; font-family: var(--serif); font-size: 14px; color: var(--mute-2); }
@@ -148,7 +158,9 @@ figcaption { margin-top: 10px; font-family: var(--serif); font-size: 14px; color
   .work { padding-top: 7vh; }
   .work-intro, .b-text, .work-next { grid-template-columns: 1fr; gap: 1em; }
   .blocks { margin-top: 8vh; gap: 8vh; }
-  .blocks > figure, .blocks > .b-grid, .blocks > .b-facts, .blocks > .tt, .empty-note { margin-left: 0; }
+  .blocks > figure, .blocks > .b-grid, .blocks > .b-facts, .blocks > .tt, .blocks > .b-cards, .empty-note { margin-left: 0; }
+  .b-cards { margin-top: -4vh; }
+  .b-no { font-size: 16px; }
   .b-grid { grid-template-columns: 1fr; }
   .b-media img, .b-media video { max-height: none; }
   .b-embed iframe { height: 70vh; }
