@@ -28,6 +28,14 @@ html, body { background: var(--paper); color: var(--ink); transition: background
 .b-cards .card, .product, .meta .chip, .pill, .b-media.contain, .b-map .plane, .b-logos .logo-box { transition: background-color .6s var(--ease), border-color .6s var(--ease), color .6s var(--ease); }
 .b-text h2, .stat .bar b, .b-map .dot.me::after { transition: color .6s, background-color .6s; }
 .eyebrow, .b-quote p::before, .b-quote p::after { color: var(--accent); }
+/* 마우스를 올리면 그 프로젝트의 포인트 컬러로 */
+.index .item:hover, .index .item:focus-visible, .index .name:hover,
+.work-next a:hover, .b-embed figcaption a:hover, .meta .chip:hover { color: var(--accent) !important; }
+.meta .chip:hover { background: color-mix(in srgb, var(--accent) 16%, var(--card)); }
+.b-cards .card, .product { border: 1px solid transparent; }
+.b-cards .card:hover, .product:hover { border-color: var(--accent); }
+.b-cards .card:hover strong, .product:hover .pill { color: var(--accent); }
+.index .name { transition: color .25s ease; }
 .stat .bar b { background: var(--accent) !important; }
 .b-map .dot.me i { border-color: var(--accent) !important; }
 body { font-family: var(--sans); -webkit-font-smoothing: antialiased; }
