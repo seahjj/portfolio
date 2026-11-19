@@ -2,6 +2,7 @@
 window.applyTheme = function (t) {
   const r = document.documentElement.style;
   const keys = ['--paper', '--ink', '--accent', '--card', '--line', '--mute', '--mute-2', '--body'];
+  document.documentElement.classList.toggle('metal', !!(t && t.metal));
   if (!t) { keys.forEach(k => r.removeProperty(k)); return; }
   const d = !!t.dark;
   r.setProperty('--paper', t.paper); r.setProperty('--ink', t.ink);

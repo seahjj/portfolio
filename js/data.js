@@ -222,7 +222,7 @@ window.PROJECTS = [
   /* ---------------- editorial (Rivet) ---------------- */
   {
     id: 'editorial',
-    theme: { paper: '#141414', ink: '#f0f0f0', accent: '#f0f0f0', card: '#202020', dark: true },
+    theme: { paper: '#121314', ink: '#eceef0', accent: '#c3c8ce', card: '#1e2022', dark: true, metal: true },
     title: 'editorial',
     titleKo: 'Rivet — 서체 리플렛',
     category: 'Editorial, Type Design',
