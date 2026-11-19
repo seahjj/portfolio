@@ -9,18 +9,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-  <link rel="stylesheet" href="css/style.css?v=5" />
+  <link rel="stylesheet" href="css/style.css?v=6" />
 </head>
 <body class="index-page">
-  <main class="index" id="index" aria-label="목차">
-    <div class="col name-col"><span class="name" id="name"></span></div>
+  <nav class="index" id="index" aria-label="목차">
+    <div class="col name-col"><a class="name" id="name" href="index.html"></a></div>
     <div class="col" id="col-groups"></div>
     <div class="col reveal" id="col-items"></div>
     <div class="col reveal" id="col-sub"></div>
-  </main>
+  </nav>
   <div class="preview" id="preview" aria-hidden="true"><img alt="" /></div>
 
-  <script src="js/data.js?v=5"></script>
-  <script src="js/index.js?v=5"></script>
+  <script src="js/data.js?v=6"></script>
+  <script src="js/nav.js?v=6"></script>
+  <script>
+    if (sessionStorage.getItem('back')) { document.body.classList.add('enter'); sessionStorage.removeItem('back'); }
+    initNav({ onIndex: true });
+  </script>
 </body>
 </html>

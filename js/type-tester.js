@@ -7,7 +7,7 @@
     <div class="tt" id="tt">
       <div class="tt-bar">
         <span>Rivet Regular</span>
-        <input type="range" id="tt-fs" min="24" max="320" value="160" aria-label="글자 크기">
+        <input type="range" id="tt-fs" min="24" max="320" value="120" aria-label="글자 크기">
       </div>
       <div class="tt-line" id="tt-line" contenteditable="true" spellcheck="false" aria-label="Rivet 서체로 입력해 보세요">Type something</div>
       <p class="tt-small" contenteditable="true" spellcheck="false" aria-label="Rivet 서체로 입력해 보세요">${PARA}</p>
@@ -18,7 +18,7 @@
     const fs = root.querySelector('#tt-fs');
     const setSize = () => line.style.fontSize = fs.value + 'px';
     fs.addEventListener('input', setSize);
-    if (innerWidth < 760) fs.value = 72;
+    if (innerWidth < 760) fs.value = 64;
     setSize();
 
     // 서식 없이 붙여넣기

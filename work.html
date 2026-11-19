@@ -6,30 +6,37 @@
   <title>jung seah — work</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="preload" href="assets/fonts/Rivet-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/style.css?v=5" />
+  <link rel="stylesheet" href="css/style.css?v=6" />
 </head>
 <body class="work-page">
-  <!-- 왼쪽 고정 정보 카드 -->
-  <aside class="card" id="card">
-    <h1 class="card-title" id="title"></h1>
-    <p class="card-ko" id="title-ko"></p>
-    <dl class="rows" id="meta"></dl>
-    <p class="card-summary" id="summary"></p>
-    <nav class="card-btns">
-      <a href="index.html" id="toindex">Index</a>
-      <a href="#" id="prev">← Prev</a>
-      <a href="#" id="next">Next →</a>
-    </nav>
-  </aside>
+  <!-- 첫 페이지와 같은 목차, 위쪽에 -->
+  <nav class="index" id="index" aria-label="목차">
+    <div class="col name-col"><a class="name" id="name" href="index.html"></a></div>
+    <div class="col" id="col-groups"></div>
+    <div class="col reveal" id="col-items"></div>
+    <div class="col reveal" id="col-sub"></div>
+  </nav>
+  <div class="preview" id="preview" aria-hidden="true"><img alt="" /></div>
 
-  <!-- 작업물 -->
-  <main class="stage" id="blocks"></main>
+  <!-- 같은 세로 줄에 맞춘 작업 내용 -->
+  <main class="work" id="work">
+    <section class="work-intro">
+      <dl class="meta" id="meta"></dl>
+      <div class="intro-text">
+        <p class="title-ko" id="title-ko"></p>
+        <p class="summary" id="summary"></p>
+      </div>
+    </section>
+    <div class="blocks" id="blocks"></div>
+    <footer class="work-next" id="footer"></footer>
+  </main>
 
-  <script src="js/data.js?v=5"></script>
-  <script src="js/type-tester.js?v=5"></script>
-  <script src="js/work.js?v=5"></script>
+  <script src="js/data.js?v=6"></script>
+  <script src="js/nav.js?v=6"></script>
+  <script src="js/type-tester.js?v=6"></script>
+  <script src="js/work.js?v=6"></script>
 </body>
 </html>
