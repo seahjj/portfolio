@@ -42,6 +42,12 @@ window.NAV = {
       ],
     },
     {
+      label: 'ux/ui design',
+      items: [
+        { label: 'piko', id: 'uxui-piko' },
+      ],
+    },
+    {
       label: 'web design',
       items: [
         { label: '악:카이브', id: 'web-akchive' },
@@ -289,6 +295,113 @@ window.PROJECTS = [
         { label: '총괄', title: '프로젝트 총괄', body: '디자인·대외활동·아트클래스팀 10명의 역할과 6개월 일정을 조율했습니다.' },
         { label: '협업', title: '공용 노션 페이지 제작', body: '일정·담당 업무·진행 상황을 한곳에서 공유하도록 구성했습니다.' },
       ] },
+    ],
+  },
+
+  /* ---------------- ux/ui: Piko ---------------- */
+  {
+    id: 'uxui-piko',
+    title: 'piko',
+    titleKo: 'Piko — 개인 맞춤 OTT 탐색 서비스',
+    category: 'UX/UI Design, Branding',
+    year: '2026',
+    role: 'UX 리서치, UI 디자인, 브랜딩',
+    tools: 'Figma',
+    thumb: 'assets/img/pk/thumb.jpg',
+    summary: 'Piko는 주 3회 이상 OTT를 소비하는 사용자가 콘텐츠 탐색에 쓰는 시간을 줄이고, 자신의 취향에 맞는 작품을 쉽게 발견할 수 있도록 돕는 개인 맞춤형 OTT 탐색 서비스입니다.',
+    blocks: [
+      { type: 'image', src: 'assets/img/pk/hero.jpg', wide: true },
+
+      { type: 'text', eyebrow: 'Background', title: 'OTT를 켜고 나서, 정작 무엇을 볼지 못 정해요',
+        body: '20~30분 동안 화면만 넘기다 결국 아무것도 보지 못한 경험. 시청하는 시간보다 무엇을 볼지 고르는 데 더 많은 시간을 쓰다 피로감에 시청을 포기하는 ‘넷플릭스 증후군’에서 출발했습니다.' },
+      { type: 'stats', items: [
+        { value: '18,214', unit: '개', label: '2023년 기준 넷플릭스 제공 콘텐츠 수', source: '디지털 포용 뉴스, 2025' },
+        { value: '3', unit: '사', label: '넷플릭스 · 웨이브 · 유튜브 모두 협업 필터링 기반 추천 사용', bar: 0 },
+      ] },
+
+      { type: 'text', eyebrow: 'Problem', title: '콘텐츠는 늘었지만, 고르는 피로도 함께 늘었어요',
+        body: '사용자는 과잉 공급된 선택지 속에서 오히려 피로를 느끼고 있어요. 기존 추천 시스템은 지금의 상황과 감정까지는 반영하지 못합니다.' },
+      { type: 'cards', items: [
+        { label: '01', title: '과잉 공급', body: '끝없이 늘어나는 콘텐츠와 선택지' },
+        { label: '02', title: '선택 피로 증가', body: '고르다 지쳐 결국 시청을 포기' },
+        { label: '03', title: '알고리즘 중심의 반복 소비', body: '비슷한 작품만 계속 추천받는 구조' },
+      ] },
+
+      { type: 'text', eyebrow: 'Research', title: '설문 37명, 심층 인터뷰 6명에게 물었어요',
+        body: '1주일에 3회 이상 OTT를 이용하며 콘텐츠 선택 과정에서 고민과 지연을 경험하는 20·30대를 대상으로 설문(2026. 3. 23–26)과 심층 인터뷰(2026. 3. 30–4. 2)를 진행했습니다.' },
+      { type: 'cards', items: [
+        { label: 'Insight 1', title: '콘텐츠 선택은 상황에 따라 달라져요', body: '시간, 일정, 감정 상태, 여유 정도에 따라 다른 콘텐츠를 소비합니다. 밥 먹을 땐 가벼운 콘텐츠, 우울할 땐 슬픈 영화처럼요.' },
+        { label: 'Insight 2', title: '익숙한 단서로 작품을 골라요', body: '콘텐츠가 많을수록 새로운 작품을 탐색하기보다 익숙한 배우, 감독, 장르를 기준으로 안전한 선택을 합니다.' },
+        { label: 'Insight 3', title: '정보보다 분위기를 먼저 소비해요', body: '제목이나 장르보다 스틸컷, 포스터, 미장센 같은 감각적 요소에 먼저 반응합니다.' },
+      ] },
+
+      { type: 'text', eyebrow: 'Persona', title: '“내 소중한 시간을 빠르고 재밌게 쓰고 싶은데, 뭘 봐야 할지 모르겠어요”',
+        body: '김탐색, 21세. 자취 3개월 차 대학생. 중간고사가 끝난 주말, 치킨과 맥주를 앞에 두고 추천 목록만 넘기다 결국 아무것도 고르지 못했습니다. 취향은 지키면서도 빠르고 만족스러운 선택을 원합니다.' },
+      { type: 'cards', items: [
+        { label: 'Pain Point', title: '선택 기준이 없어 고르는 데 오래 걸려요', body: '추천 알고리즘이 어떤 기준인지 몰라 믿기 어렵고, 기록하지 않아 예전에 본 작품도 잘 떠오르지 않아요.' },
+        { label: 'Need', title: '상황에 맞는 작품을 빠르게 고르고 싶어요', body: '재밌게 본 건 쉽게 기록하고, 내 취향과 이어진 새 작품을 부담 없이 시도해보고 싶어요.' },
+      ] },
+
+      { type: 'text', eyebrow: 'Journey Map', title: '탐색에서 기록까지, 감정이 가장 떨어지는 순간을 찾았어요',
+        body: '탐색·검색 → 비교·분석 → 인지·흥미 → 감상 → 기록·리뷰 남기기. 비교하고 고르는 구간에서 감정이 가장 낮았고, 이 지점에 Piko의 해결책을 두었습니다.' },
+      { type: 'image', src: 'assets/img/pk/journey.jpg' },
+
+      { type: 'text', eyebrow: 'Solution', title: '인사이트 세 가지가 핵심 기능 세 가지로' },
+      { type: 'cards', items: [
+        { label: '상황', title: '캘린더 연동 맞춤 추천', body: '사용자의 일정을 바탕으로 지금 바로 볼 수 있는 콘텐츠를 제안하고, 시청 일정을 관리합니다.' },
+        { label: '단서', title: 'AI 추천', body: '이 작품이 왜 내 취향에 맞는지 구체적인 근거를 보여주며 선택을 돕습니다.' },
+        { label: '분위기', title: '스틸컷 · 명대사 기반 탐색', body: '스틸컷과 명대사로 작품의 분위기를 직관적으로 파악하고 흥미를 끌어냅니다.' },
+      ] },
+
+      { type: 'text', eyebrow: 'Priority & IA', title: '기능의 우선순위를 정하고, 구조를 짰어요',
+        body: '감각–근거, 축적–즉각 두 축으로 기능의 위치를 잡아 우선순위를 정하고, 홈 · 탐색 · AI · 리뷰 보관함 · 마이페이지로 이어지는 정보 구조를 설계했습니다.' },
+      { type: 'grid', cols: 2, items: [
+        { src: 'assets/img/pk/priority.jpg', caption: '기능 우선순위' },
+        { src: 'assets/img/pk/ia.jpg', caption: 'IA' },
+      ] },
+      { type: 'image', src: 'assets/img/pk/wire.jpg', caption: '와이어프레임' },
+
+      { type: 'text', eyebrow: 'Branding', title: 'Piko = Pick(고르다) + -o',
+        body: '‘고르다’에 접미사 -o를 더해, 취향이 완성되는 경험이라는 의미를 담았습니다. 고르는 순간을 가리키는 화살표 심볼과 선명한 라임 그린으로 가볍고 경쾌한 인상을 만들었습니다.' },
+      { type: 'image', src: 'assets/img/pk/brand.jpg', size: 'small' },
+      { type: 'colors', items: [
+        { name: 'Main Color', hex: '#BBFF46', cmyk: '-', rgb: '187/255/70' },
+        { name: 'Gray 900', hex: '#0F110F', cmyk: '-', rgb: '15/17/15' },
+        { name: 'Gray 800', hex: '#1A1A1A', cmyk: '-', rgb: '26/26/26' },
+        { name: 'Gray 700', hex: '#262626', cmyk: '-', rgb: '38/38/38' },
+        { name: 'Gray 500', hex: '#585858', cmyk: '-', rgb: '88/88/88' },
+        { name: 'Gray 100', hex: '#F5F5F5', cmyk: '-', rgb: '245/245/245' },
+      ] },
+      { type: 'cards', items: [
+        { label: 'Typography', title: 'Geom', body: '로고와 영문 헤드라인' },
+        { label: 'Typography', title: 'Poppins', body: '영문 본문과 UI 텍스트, 한글 함께 사용' },
+      ] },
+
+      { type: 'text', eyebrow: 'Feature 01 · 캘린더 연동 추천', title: '내 캘린더에 맞춰, 지금 볼 수 있는 작품을 추천해요',
+        body: '사이드탭에서 오늘 일정과 알림을 한눈에 보고, 남은 시간에 맞는 작품을 추천받아요. 찜하기 대신 ‘예약하기’로 원하는 날짜와 시간에 알림을 받을 수 있어요.' },
+      { type: 'image', src: 'assets/img/pk/calendar.jpg' },
+      { type: 'image', src: 'assets/img/pk/reserve.jpg' },
+
+      { type: 'text', eyebrow: 'Feature 02 · AI 추천', title: '고민될 때는 AI에게 물어보세요',
+        body: '대화와 기록을 바탕으로 취향을 분석해 딱 맞는 작품을 추천하고, 왜 추천했는지 이유를 함께 알려줘요. 대화할수록 내 취향을 더 잘 이해합니다.' },
+      { type: 'image', src: 'assets/img/pk/ai.jpg' },
+
+      { type: 'text', eyebrow: 'Feature 03 · 스틸컷 탐색', title: '오늘의 분위기, 색으로 골라보세요',
+        body: '스틸컷에서 뽑아낸 컬러를 기준으로 비슷한 무드의 작품을 탐색할 수 있어요.' },
+      { type: 'image', src: 'assets/img/pk/still.jpg' },
+
+      { type: 'text', eyebrow: 'Feature 04 · 명대사 탐색', title: '기억에 남는 한 문장으로 시작해보세요',
+        body: '명대사와 감정 키워드를 연결해, 지금의 감정에 어울리는 작품을 찾아드려요.' },
+      { type: 'image', src: 'assets/img/pk/quote.jpg' },
+
+      { type: 'text', eyebrow: 'More Screens', title: '기록하고, 다듬고, 다시 꺼내 봐요',
+        body: '리뷰를 기록하는 아카이빙 페이지, 내 알고리즘을 직접 다듬는 마이페이지, 시청 화면과 상세 화면.' },
+      { type: 'image', src: 'assets/img/pk/archive.jpg', caption: '아카이빙 페이지' },
+      { type: 'grid', cols: 2, items: [
+        { src: 'assets/img/pk/mypage.jpg', caption: '마이페이지' },
+        { src: 'assets/img/pk/detail.jpg', caption: '시청 · 상세 화면' },
+      ] },
+      { type: 'quote', text: '고르는 시간은 줄이고, 고른 작품은 더 좋아지도록', sub: '시청 일정을 관리하는 캘린더 연동, AI와 대화하며 취향에 맞는 작품을 추천받는 인터랙티브 탐색, 스틸컷과 명대사 기반의 감각적 큐레이션.' },
     ],
   },
 

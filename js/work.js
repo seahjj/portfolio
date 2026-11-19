@@ -52,7 +52,7 @@
     colors: b => `<section class="b-colors">${b.items.map(i => {
       const h = i.hex.replace('#', ''); const lum = (parseInt(h.slice(0, 2), 16) * .3 + parseInt(h.slice(2, 4), 16) * .59 + parseInt(h.slice(4, 6), 16) * .11);
       return `<div class="chip ${lum < 140 ? 'dark' : ''}" style="background:${i.hex}"><b>${esc(i.name)}</b>
-        <span>${esc(i.hex.toUpperCase())}</span><span>CMYK ${esc(i.cmyk)}</span><span>RGB ${esc(i.rgb)}</span></div>`;
+        <span>${esc(i.hex.toUpperCase())}</span>${i.cmyk && i.cmyk !== '-' ? `<span>CMYK ${esc(i.cmyk)}</span>` : ''}<span>RGB ${esc(i.rgb)}</span></div>`;
     }).join('')}</section>`,
     products: b => `<section class="b-products">${b.items.map(i => `<div class="product"><div class="pimg"><img src="${i.src}" alt="${esc(i.name)}" loading="lazy" /></div>
       <span class="pill">${esc(i.name)}</span><p>${esc(i.body)}</p></div>`).join('')}</section>`,
